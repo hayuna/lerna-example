@@ -1,9 +1,13 @@
 import logo from "./logo.svg";
 import "./App.css";
 import _ from "lodash";
-import { QueryPayload } from "@my-namespace/simple-shared-data";
+import axios from "axios";
 
 function App() {
+  const getData = async () => {
+    const { data } = await axios("http://localhost:3001/");
+    console.log(data.payload);
+  };
   return (
     <div className="App">
       <header className="App-header">
@@ -19,15 +23,7 @@ function App() {
         >
           {_.toUpper("Learn React")}
         </a>
-        <button
-          onClick={() => {
-            fetch("http://localhost:3001/", {})
-              .then((response) => response.json())
-              .then((data: QueryPayload) => console.log(data.payload));
-          }}
-        >
-          GET SOME DATA
-        </button>
+        <button onClick={getData}>GET SOME DATA</button>
       </header>
     </div>
   );

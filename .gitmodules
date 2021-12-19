@@ -1,3 +1,0 @@
-[submodule "packages/simple-react-app/src/react-dark-mode"]
-	path = packages/simple-react-app/src/react-dark-mode
-	url = git@github.com:alexeagleson/react-dark-mode.git
